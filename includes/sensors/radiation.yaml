@@ -1,0 +1,41 @@
+- platform: mqtt
+  state_topic: "DE41812/ext/0/unk/radiation"
+  name: "Radiation monitor Erkelenz (DE)"
+  qos: 0
+  unit_of_measurement: "cpm"
+  value_template: '{{ value_json.value }}'
+
+- platform: mqtt
+  state_topic: "NL4709/ext/0/unk/radiation"
+  name: "Radiation monitor Nispen (NL)"
+  qos: 0
+  unit_of_measurement: "cpm"
+  value_template: '{{ value_json.value }}'
+
+- platform: mqtt
+  state_topic: "BE9930/ext/0/unk/radiation"
+  name: "Radiation monitor Zomergem (BE)"
+  qos: 0
+  unit_of_measurement: "cpm"
+  value_template: '{{ value_json.value }}'
+
+- platform: mqtt
+  state_topic: "BE3970/ext/0/unk/radiation"
+  name: "Radiation monitor Leopoldsburg (BE)"
+  qos: 0
+  unit_of_measurement: "cpm"
+  value_template: '{{ value_json.value }}'
+
+- platform: mqtt
+  state_topic: "NL6200/ext/0/unk/radiation"
+  name: "Radiation monitor Maastricht (NL)"
+  qos: 0
+  unit_of_measurement: "cpm"
+  value_template: '{{ value_json.value }}'
+
+- platform: mqtt
+  state_topic: "NL5500/ext/0/unk/radiation"
+  name: "Radiation monitor Tilburg (NL)"
+  qos: 0
+  unit_of_measurement: "cpm"
+  value_template: '{{ value_json.value }}'

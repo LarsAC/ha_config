@@ -1,0 +1,11 @@
+# when radiation is reported to be high, notify everyone on slack 
+- alias: RadiationHigh
+  trigger:
+    platform: mqtt
+    topic: virt/ext/0/BENL/radiation_high
+  action:
+    service: notify.slack
+    data:
+      title: "Radiation high"
+      message: "Somewhere in BE / NL"
+

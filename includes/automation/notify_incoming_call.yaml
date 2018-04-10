@@ -1,0 +1,10 @@
+- alias: IncomingCall
+  trigger:
+    platform: state
+    entity_id: sensor.phone
+    to: 'ringing'
+  action:
+    service: notify.slack
+    data_template:
+      title: "Incoming call"
+      message: "Incoming call from {{ states.sensor.phone.attributes.from }}"

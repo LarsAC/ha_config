@@ -1,0 +1,57 @@
+      name: Floorplan EG
+      image: /local/custom_ui/floorplan/floorplan-eg.svg
+      stylesheet: /local/custom_ui/floorplan/floorplan.css
+      
+      # These options are optional
+      warnings:            # enable warnings (to find out why things might ot be working correctly)
+
+      groups:
+
+        - name: Lights
+          entities:
+             - light.kuche
+             - light.wohnzimmer
+          states:
+            - state: 'on'
+              class: 'light-on'
+            - state: 'off'
+              class: 'light-off'
+          action:
+            service: toggle
+
+        - name: Cameras
+          entities:
+            - camera.kamera_haustur
+          states:
+            - state: 'idle'
+              class: 'camera-idle'
+
+        - name: Phones
+          entities:
+            - sensor.phone
+          states:
+            - state: 'idle'
+              class: 'phone-idle'
+            - state: 'talking'
+              class: 'phone-talking'
+            - state: 'ringing'
+              class: 'phone-ringing'
+            - state: 'dialing'
+              class: 'phone-dialing'
+
+        - name: Temperature sensors
+          entities:
+            - sensor.multisensor_001_temperature
+          text_template: '${entity.state ? entity.state : "unknown"} °C'
+
+        - name: Humidity sensors
+          entities:
+            - sensor.multisensor_001_relative_humidity
+          text_template: '${entity.state ? entity.state : "unknown"}%'
+
+        - name: Temperature sensors
+          entities:
+            - sensor.multisensor_001_luminance
+          text_template: '${entity.state ? entity.state : "unknown"} lux'
+
+        

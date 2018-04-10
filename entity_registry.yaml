@@ -1,0 +1,120 @@
+sensor.larsens_iphone_battery_level:
+  name:
+  platform: ios
+  unique_id: level_larsens_iphonetest
+sensor.larsens_iphone_battery_state:
+  name:
+  platform: ios
+  unique_id: state_larsens_iphone
+sensor.larsens_iphone_battery_state_2:
+  name:
+  platform: ios
+  unique_id: state_larsens_iphonetest
+sensor.larsens_iphone_battery_level_2:
+  name:
+  platform: ios
+  unique_id: level_larsens_iphone
+light.wohnzimmer_deckenlampe:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:02:04:c9:c0-0b
+light.kuche_schrank:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:02:ca:94:36-0b
+light.kuche_deckenlampe:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:02:06:b0:47-0b
+switch.smoke_detector_002_switch:
+  name:
+  platform: zwave
+  unique_id: 2-72057594076282880
+binary_sensor.smoke_detector_002_sensor:
+  name:
+  platform: zwave
+  unique_id: 2-72057594076463104
+sensor.smoke_detector_002_alarm_type:
+  name:
+  platform: zwave
+  unique_id: 2-72057594077528065
+sensor.smoke_detector_002_alarm_level:
+  name:
+  platform: zwave
+  unique_id: 2-72057594077528081
+sensor.smoke_detector_002_sourcenodeid:
+  name:
+  platform: zwave
+  unique_id: 2-72057594077528097
+sensor.smoke_detector_002_smoke:
+  name:
+  platform: zwave
+  unique_id: 2-72057594077528129
+switch.smoke_detector_001_switch:
+  name:
+  platform: zwave
+  unique_id: 3-72057594093060096
+binary_sensor.smoke_detector_001_sensor:
+  name:
+  platform: zwave
+  unique_id: 3-72057594093240320
+sensor.smoke_detector_001_alarm_type:
+  name:
+  platform: zwave
+  unique_id: 3-72057594094305281
+sensor.smoke_detector_001_alarm_level:
+  name:
+  platform: zwave
+  unique_id: 3-72057594094305297
+sensor.smoke_detector_001_sourcenodeid:
+  name:
+  platform: zwave
+  unique_id: 3-72057594094305313
+sensor.smoke_detector_001_smoke:
+  name:
+  platform: zwave
+  unique_id: 3-72057594094305345
+climate.thermostat_001_heating_1:
+  name:
+  platform: zwave
+  unique_id: 4-72057594110328850
+binary_sensor.multisensor_001_sensor:
+  name:
+  platform: zwave
+  unique_id: 5-72057594126794752
+sensor.multisensor_001_temperature:
+  name:
+  platform: zwave
+  unique_id: 5-72057594126811154
+sensor.multisensor_001_luminance:
+  name:
+  platform: zwave
+  unique_id: 5-72057594126811186
+sensor.multisensor_001_relative_humidity:
+  name:
+  platform: zwave
+  unique_id: 5-72057594126811218
+sensor.multisensor_001_ultraviolet:
+  name:
+  platform: zwave
+  unique_id: 5-72057594126811570
+sensor.multisensor_001_alarm_type:
+  name:
+  platform: zwave
+  unique_id: 5-72057594127859713
+sensor.multisensor_001_alarm_level:
+  name:
+  platform: zwave
+  unique_id: 5-72057594127859729
+sensor.multisensor_001_sourcenodeid:
+  name:
+  platform: zwave
+  unique_id: 5-72057594127859745
+sensor.multisensor_001_burglar:
+  name:
+  platform: zwave
+  unique_id: 5-72057594127859873
+media_player.aftb58:
+  name:
+  platform: cast
+  unique_id: 35d9e397-aa0c-44ca-8a9a-064d5e326f67

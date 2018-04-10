@@ -1,0 +1,10 @@
+- alias: Notify on smoke sensor alarm
+  trigger:
+    platform: state
+    entity_id: group.all_smoke_sensors
+    from: 'off'
+  action:
+    service: notify.slack
+    data_template:
+      title: "Smoke sensor alarm"
+      message: "Alarm  - {{ trigger.to_state.attributes.friendly_name }} switched to {{ trigger.to_state.state }} !"

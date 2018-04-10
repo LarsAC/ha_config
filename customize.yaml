@@ -1,0 +1,26 @@
+group.all_automations:
+  hidden: false
+
+group.settings:
+  hidden: false
+
+binary_sensor.multisensor_001_sensor:
+  friendly_name: Bewegung
+
+sensor.multisensor_001_temperature:
+  friendly_name: Temperatur
+
+sensor.multisensor_001_relative_humidity:
+  friendly_name: Luftfeuchtigkeit
+
+sensor.multisensor_001_luminance:
+  friendly_name: Helligkeit
+
+binary_sensor.smoke_detector_001_sensor:
+  friendly_name: Rauchmelder Flur EG
+
+binary_sensor.smoke_detector_002_sensor:
+  friendly_name: Rauchmelder Flur OG
+
+climate.thermostat_001_heating_1:
+  friendly_name: Thermostat

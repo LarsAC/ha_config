@@ -1,0 +1,17 @@
+- platform: google_travel_time
+  name: travel to work
+  api_key: !secret ggl_travel_time_api_key
+  origin: zone.home
+  destination: zone.work
+
+- platform: google_travel_time
+  name: travel from work
+  api_key: !secret ggl_travel_time_api_key
+  origin: Leverkusen, Germany
+  destination: zone.home
+
+- platform: google_travel_time
+  name: Lars Location To Home
+  api_key: !secret ggl_travel_time_api_key
+  origin: device_tracker.lvw_iphone
+  destination: zone.home

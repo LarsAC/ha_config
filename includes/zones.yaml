@@ -1,0 +1,15 @@
+- name: work
+  latitude: !secret lon_work
+  longitude: !secret lat_work
+  radius: 500
+  icon: mdi:worker
+
+- name: office
+  latitude: !secret lon_work
+  longitude: !secret lat_work
+  icon: mdi:worker
+  track_ios: true
+  beacon:
+    uuid: B5B182C7-EAB1-4988-AA99-B5C1517008D9
+    major: 1
+    minor: 5834

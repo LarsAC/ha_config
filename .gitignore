@@ -1,0 +1,19 @@
+# Ignore everything
+*
+
+# But descend into directories
+!*/
+
+# include yaml, py
+!*.yaml
+!*.py
+!*.css
+!*.html
+!*.svg
+!*.js
+
+!.gitignore
+
+secrets.yaml
+known_devices.yaml
+

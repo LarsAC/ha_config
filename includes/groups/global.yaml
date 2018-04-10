@@ -1,0 +1,26 @@
+family:
+  name: Family
+  entities:
+    - device_tracker.lvw_iphone
+    - device_tracker.immesiphone
+imme:
+  name: Imme
+  entities:
+    - device_tracker.immesiphone
+
+nike:
+  name: Nike
+  entities:
+    - device_tracker.nikesiphone_2
+
+lars:
+  name: Lars
+  entities:
+    - device_tracker.lvw_iphone
+    - device_tracker.larsensiphone2
+
+all_smoke_sensors:
+  name: Smoke sensors
+  entities:
+    - binary_sensor.popp_smoke_detector_and_siren_sensor_2_0
+    - binary_sensor.popp_smoke_detector_and_siren_sensor_3_0

@@ -1,0 +1,26 @@
+# remind me to check whether to turn on the car heating in the morning
+- alias: CheckCarHeating
+  trigger:
+    platform: time
+    hours: 6
+    minutes: 5
+    seconds: 0
+  condition:
+    condition: and
+    conditions:
+      - condition: numeric_state
+        entity_id: sensor.dark_sky_temperature
+        below: 5
+      - condition: time
+        weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+          - fri
+  action:
+    service: notify.slack
+    data_template:
+      title: "Low outside temperature"
+      message: "Outside temperature is {{ states.sensor.dark_sky_temperature.state }}"
+  

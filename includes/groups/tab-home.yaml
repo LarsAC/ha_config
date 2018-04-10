@@ -1,0 +1,53 @@
+default_view:
+  view: yes
+  entities:
+    - group.weather
+    - group.radiation
+    - group.family_info
+    - group.travel_times
+    - group.flur
+    - group.security
+
+weather:
+  entities:
+    - sun.sun
+    - sensor.dark_sky_hourly_summary
+    - sensor.dark_sky_temperature
+    - sensor.dark_sky_humidity
+    - sensor.dark_sky_pressure
+    - sensor.dark_sky_ozone
+    - sensor.dark_sky_cloud_coverage
+    - sensor.dark_sky_wind_speed
+
+radiation:
+  name: Radiation
+  entities:
+    - sensor.odlinfo_031020004
+    - sensor.odlinfo_053130003
+    - sensor.odlinfo_053540042
+
+security:
+  name: Security
+  entities:
+    - camera.haustur
+
+family_info:
+  name: Family
+  entities:
+    - group.imme
+    - group.lars
+
+flur:
+  name: Flur
+  entities:
+    - light.flur
+    - binary_sensor.multisensor_001_sensor
+    - sensor.multisensor_001_temperature
+    - sensor.multisensor_001_relative_humidity
+    - sensor.multisensor_001_luminance
+    
+travel_times:
+  name: Work
+  entities:
+    - sensor.travel_from_work
+    - sensor.travel_to_work

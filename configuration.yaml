@@ -1,0 +1,106 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+
+  # Location required to calculate the time the sun rises and sets (50.833480, 6.083282)
+  latitude: !secret lat_home
+  longitude: !secret lon_home
+
+  # Impacts weather/sunrise data
+  elevation: 189
+
+  # C for Celsius, F for Fahrenheit
+  unit_system: metric
+
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/Berlin
+
+  customize: !include customize.yaml
+
+http:
+  api_password: !secret http_password
+  
+updater:
+discovery:
+conversation:
+frontend:
+logbook:
+sun:
+history:
+
+recorder:
+  purge_keep_days: 5
+  include:
+    entities:
+      - sensor.odlinfo_031020004
+      - sensor.odlinfo_053130003
+      - sensor.odlinfo_053540042
+      - sensor.smoke_detector_001_smoke
+      - sensor.smoke_detector_002_smoke
+      - binary_sensor.kamera_haustur_outdoor_animal
+      - binary_sensor.kamera_haustur_outdoor_human
+      - binary_sensor.kamera_haustur_outdoor_vehicle
+      - sensor.multisensor_001_burglar
+      - sensor.multisensor_001_luminance
+      - sensor.multisensor_001_relative_humidity
+      - sensor.multisensor_001_temperature
+      - sensor.travel_from_work
+      - sensor.travel_to_work
+
+zwave:
+  usb_path: /dev/ttyACM0
+
+panel_iframe:
+  router:
+    title: 'Fritz.box'
+    url: 'http://192.168.178.1'
+    icon: mdi:access-point-network
+
+panel_custom:
+  - name: floorplan
+    sidebar_title: Floorplan EG
+    sidebar_icon: mdi:home
+    url_path: floorplan_eg
+    config: !include includes/floorplan.yaml
+
+alexa:
+  intents:
+    ClothingForTodayIntent:
+      speech:
+        type: plaintext
+        text: >
+          {%- if states.sensor.dark_sky_temperature.state | float < 10 -%}
+            Du musst zwei Hosen und einen Pullover anziehen.
+          {%- elif states.sensor.dark_sky_temperature.state | float < 21 -%}
+            Eine Hose und Pullover reicht.
+          {%- else -%}
+            Du kannst T-Shirt und Kleid anziehen.
+          {%- endif -%}
+
+netatmo:
+  api_key: !secret netatmo_api_key
+  secret_key: !secret netatmo_secret_key
+  username: !secret netatmo_username
+  password: !secret netatmo_password
+
+camera:
+  platform: netatmo
+
+hue:
+  bridges:
+    - host: 192.168.178.25
+      allow_unreachable: true
+      allow_hue_groups: true
+
+switch:
+  - platform: tplink
+    host: 192.168.178.45
+
+ios:
+
+device_tracker: !include includes/device_trackers.yaml
+zone: !include includes/zones.yaml
+sensor: !include_dir_merge_list includes/sensors
+automation: !include_dir_merge_list includes/automation
+group: !include_dir_merge_named includes/groups
+notify: !include includes/notify.yaml

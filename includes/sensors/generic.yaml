@@ -1,0 +1,35 @@
+- platform: darksky
+  api_key: !secret darksky_api_key
+  monitored_conditions:
+    - temperature
+    - wind_speed
+    - cloud_cover
+    - humidity
+    - pressure
+    - ozone
+    - hourly_summary
+
+- platform: fritzbox_callmonitor
+  host: 192.168.178.1
+
+- platform: fritzbox_netmonitor
+  host: 192.168.178.1
+
+- platform: template
+  sensors:
+    dsl_upload_speed:
+      value_template: '{{ "{0:.1f}".format(states.sensor.fritz_netmonitor.attributes.max_byte_rate_up / 125600.0) }}'
+      friendly_name: 'DSL upload speed'
+      unit_of_measurement: 'Mbit/s'
+    dsl_download_speed:
+      value_template: '{{ "{0:.1f}".format(states.sensor.fritz_netmonitor.attributes.max_byte_rate_down / 125600.0) }}'
+      friendly_name: 'DSL download speed'
+      unit_of_measurement: 'Mbit/s'
+
+- platform: odlinfo
+  username: !secret odlinfo_username
+  password: !secret odlinfo_password
+  stations:
+    - '031020004'
+    - '053130003'
+    - '053540042'

@@ -1,0 +1,11 @@
+alexa:
+  intents:
+    ClothingForTodayIntent:
+      speech:
+        type: plaintext
+        text: >
+          {%- if states.sensor.dark_sky_temperature.state < 10 -%}
+            Du musst zwei Hosen und Pullover anziehen.
+          {%- else -%}
+            Eine Hose reicht.
+          {%- endif -%}

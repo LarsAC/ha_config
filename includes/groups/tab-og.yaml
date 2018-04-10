@@ -1,0 +1,15 @@
+flur_og:
+  name: Flur OG
+  entities:
+    - climate.thermostat_001_heating_1
+    - binary_sensor.smoke_detector_002_sensor
+
+siri:
+  name: Siri
+
+OG:
+  name: OG
+  view: yes
+  entities:
+    - group.flur_og
+    - group.siri

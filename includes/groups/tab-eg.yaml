@@ -1,0 +1,31 @@
+flur_eg:
+  name: Flur EG
+  entities:
+    - binary_sensor.smoke_detector_001_sensor
+
+wohnzimmer_eg:
+  name: Wohnzimmer EG
+  entities:
+    - light.wohnzimmer
+    - switch.wohnzimmer_regal
+
+kuche_eg:
+  name: Küche EG
+  entities:
+    - light.kuche
+
+exterior:
+  name: Außenbereich
+  entities:
+    - camera.haustur
+  
+
+EG:
+  name: EG
+  view: yes
+  entities:
+    - group.wohnzimmer_eg
+    - group.kuche_eg
+    - group.flur_eg
+    - group.exterior
+
