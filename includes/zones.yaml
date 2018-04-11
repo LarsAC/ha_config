@@ -10,6 +10,6 @@
   icon: mdi:worker
   track_ios: true
   beacon:
-    uuid: B5B182C7-EAB1-4988-AA99-B5C1517008D9
-    major: 1
-    minor: 5834
+    uuid: f3403df9-8cc2-4dcf-bd69-8c75dc53f480
+    major: 10
+    minor: 10
