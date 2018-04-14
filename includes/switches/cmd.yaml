@@ -1,0 +1,8 @@
+- platform: command_line
+  switches:
+    dashboard_eg_screen:
+      command_on: !secret dashboard_eg_screen_on
+      command_off: !secret dashboard_eg_screen_off
+      command_state: !secret dashboard_eg_screen_state
+      value_template: '{{ value == "on" }}'
+      friendly_name: Dashboard EG
