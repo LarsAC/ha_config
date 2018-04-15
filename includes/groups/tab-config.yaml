@@ -6,6 +6,7 @@ settings:
     - group.all_automations
     - group.network
     - group.system
+    - group.dashboards
 
 network:
   name: Network
@@ -24,3 +25,8 @@ system:
     - sensor.network_in
     - sensor.network_out
     - sensor.since_last_boot
+
+dashboards:
+  name: Dashboards
+  entities:
+    - switch.dashboard_eg_screen

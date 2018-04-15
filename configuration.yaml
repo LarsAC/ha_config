@@ -92,15 +92,12 @@ hue:
       allow_unreachable: true
       allow_hue_groups: true
 
-switch:
-  - platform: tplink
-    host: 192.168.178.45
-
 ios:
 
 device_tracker: !include includes/device_trackers.yaml
 zone: !include includes/zones.yaml
 sensor: !include_dir_merge_list includes/sensors
+switch: !include_dir_merge_list includes/switches
 automation: !include_dir_merge_list includes/automation
 group: !include_dir_merge_named includes/groups
 notify: !include includes/notify.yaml
